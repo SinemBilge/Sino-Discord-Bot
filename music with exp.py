@@ -66,6 +66,14 @@ class music(commands.Cog):
         await ctx.send("The break is over!")
         await ctx.send("Restart the pomodoro")
 
+@commands.command()
+async def on_voice_state_update(ctx):
+    #voice_state = member.guild.voice_client
+    #channel = bot.get_channel(int(981489775192186914))
+    if len(ctx.guild.member_count) == 1:   
+        if user == voice_client.user.id:
+            await channel.send("I can't stay alone!")
+            await voice_state.disconnect()   
 
    # @client.command()
    # async def sing(ctx):
